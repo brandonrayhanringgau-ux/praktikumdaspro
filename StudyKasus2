@@ -65,3 +65,4 @@ public class StudiKasus2 {
         input.close();
     }
 }
+
