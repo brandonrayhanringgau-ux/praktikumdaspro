@@ -1,0 +1,14 @@
+
+import java.util.Scanner;
+
+public class StudiKasus2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String nama, jenisKegiatan, status;
+        int jumlahDokumen, peringkatJuara, statusPendanaan;
+
+        System.out.print("Nama mahasiswa : ");
+        nama = input.nextLine();
+
+       
