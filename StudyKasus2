@@ -11,4 +11,57 @@ public class StudiKasus2 {
         System.out.print("Nama mahasiswa : ");
         nama = input.nextLine();
 
-       
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : ");
+        jenisKegiatan = input.nextLine().toUpperCase();
+
+        if (jenisKegiatan.equals("BELMAWA") ||
+            jenisKegiatan.equals("BAKORMA") ||
+            jenisKegiatan.equals("MANDIRI")) {
+
+            System.out.print("Jumlah dokumen : ");
+            jumlahDokumen = input.nextInt();
+
+            System.out.print("Peringkat juara : ");
+            peringkatJuara = input.nextInt();
+
+            if (jumlahDokumen < 4) {
+                status = "Dokumen tidak lengkap (kurang "
+                        + (4 - jumlahDokumen)
+                        + " dokumen). Dana penghargaan tidak diberikan.";
+            } else {
+                if (peringkatJuara >= 1 && peringkatJuara <= 3) {
+                    status = "Dana penghargaan diberikan.";
+                } else {
+                    status = "Bukan juara 1, 2, atau 3. Dana penghargaan tidak diberikan.";
+                }
+            }
+
+        } else if (jenisKegiatan.equals("PKM")) {
+
+            System.out.print("Jumlah dokumen : ");
+            jumlahDokumen = input.nextInt();
+
+            System.out.print("Status pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+            statusPendanaan = input.nextInt();
+
+            if (jumlahDokumen < 4) {
+                status = "Dokumen tidak lengkap (kurang "
+                        + (4 - jumlahDokumen)
+                        + " dokumen). Dana penghargaan tidak diberikan.";
+            } else {
+                if (statusPendanaan == 1) {
+                    status = "Tim lolos pendanaan. Dana penghargaan diberikan.";
+                } else {
+                    status = "Tim tidak lolos pendanaan. Dana penghargaan tidak diberikan.";
+                }
+            }
+
+        } else {
+            status = "Kegiatan lainnya. Dana penghargaan tidak diberikan.";
+        }
+
+        System.out.println("Status : " + status);
+
+        input.close();
+    }
+}
